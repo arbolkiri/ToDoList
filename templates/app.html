@@ -1,0 +1,14 @@
+<form>
+    <div>
+        <input type="text">
+    </div>
+    <button>+</button>
+</form>
+<ul>
+    <% data.each(function(todo){ %>
+        <li cid="<%= todo.cid %>">
+            <span><%= todo.get('description') %></span>
+            <input type="checkbox" <% if(todo.get('isDone')){ %> checked="checked" <% } %> >
+        </li>
+    <% }) %>
+</ul>
