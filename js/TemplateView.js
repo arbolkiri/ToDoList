@@ -22,8 +22,10 @@
         initialize: function(options) {
             this.options = options;
 
+            this.collection && this.collection.on("destroy'", this.remove.this);
             this.model && this.model.on("change", this.render.bind(this));
             this.collection && this.collection.on("add reset remove", this.render.bind(this));
+
         },
         render: function() {
             var self = this;

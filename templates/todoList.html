@@ -1,14 +1,20 @@
 <form class="addItemForm">
+<h2> Cosas Por Hacer </h2>
     <div class="addItem">
-        <input type="text" name="John">
+
+        <input type="text" name="John" placeholder="¿Qué debes que hacer hoy?"</input>
+<button class="addbutton">+</button>
     </div>
-    <button>+</button>
+
 </form>
 <ul>
-    <% data.each(function(l){ %>
-        <li cid="<%= l.cid %>">
-            <span class="data"><%= l.get('title') %></span>
-            <input type="checkbox">
+    <% data.each(function(l){ %> <!going over each model!>
+        <li cid="<%= l.cid %>" class= "grid grid-2-400">
+            <span class="data"><%= l.get('title') %>
+
+               <input class="isurgent" type="checkbox" <%= l.get('isUrgent') ? 'checked="checked"' : " "%> />
+               <button class="destroy" name="delete" >X</button>
+            </span>
         </li>
     <% }) %>
 </ul>

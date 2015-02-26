@@ -14,12 +14,15 @@ function app(){
         {url: "./bower_components/backbone/backbone.js"},
         // {url: "./bower_components/react/react.min.js"},
         // {url: "./node_modules/jsnox/index.js"},
+        // {url: "./bower_components/parse-js-sdk/lib/parse.min.js"},
         {url: "./bower_components/pace/pace.min.js"},
         {url: "./js/TemplateView.js"},
         {url: "./js/toDoApp.js"}
 
     ).then(function(){
         document.querySelector("html").style.opacity = 1;
+        //connect Parse here
+        // Parse.initialize("app ID here", "js key here")
         // start app?
 
         new Backbone.TodoRouter();
